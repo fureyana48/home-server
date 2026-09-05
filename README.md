@@ -1,37 +1,58 @@
-# Home Server Core
+# Home Server
 
-**Core Infrastructure Documentation — Technical Template**
+**Version:** `v1.1.0`  
+**Status:** STANDARDIZED BASELINE  
+**Scope:** Home infrastructure core spanning Fedora Server on ThinkPad T540p and Proxmox VE on ThinkPad W530.
 
-This repository documents the stable **Core Layer** of a personal homelab infrastructure.
+## Purpose
 
-## Architecture
+This repository documents a defined technical baseline, configuration model, operational procedures, and validation evidence for its project scope. It follows the repository structure established by `github-repository-template` while retaining project-specific technical material where required.
+
+## Repository Principles
+
+- **Structured:** common documentation follows a predictable layout.
+- **Technical:** documentation is explicit enough for the owner to understand and maintain the system.
+- **Reproducible:** configuration and procedures should be documented as repeatable operations.
+- **Evidence-based:** incomplete work is marked `PENDING` rather than guessed.
+- **Stable by default:** changes should be deliberate, validated, and recorded.
+- **Context-aware:** project-specific files are retained when they serve a real technical purpose.
+
+## Lifecycle
+
+`DISCOVERY → BASELINE → IMPLEMENTATION → VALIDATION → BACKUP → RELEASE → MAINTENANCE`
+
+## Documentation Model
 
 ```text
-Home Server Core
-├── Fedora Server — ThinkPad T540p
-├── Proxmox VE — ThinkPad W530
-└── Higher Layers: VMs / Containers / Applications / Services / Experiments
+home-server/
+├── README.md
+├── CHANGELOG.md
+├── VERSION
+├── LICENSE
+├── .gitignore
+├── docs/
+│   ├── ARCHITECTURE.md
+│   ├── CONFIGURATION.md
+│   ├── DEVELOPMENT.md
+│   ├── releases/
+│   │   └── vv1.1.0.md
+│   └── project/
+│       └── project-specific documentation
+└── project-specific directories
 ```
 
-## Core Layer Policy
+The `docs/project/` tree contains the repository's detailed technical material. Operational directories such as `configs/`, `scripts/`, `inventory/`, `validation/`, `policies/`, `templates/`, or `backups/` remain at the repository root when they represent actual project artifacts.
 
-The Core Layer is the controlled infrastructure boundary. Changes above it should not unnecessarily modify or destabilize the host foundation.
+## Current Baseline
 
-## Documentation Lifecycle
+**`v1.1.0` — standardized repository baseline.**
 
-1. Scope and role
-2. Baseline configuration
-3. Pre-change audit
-4. Change record
-5. Post-change validation
-6. Backup and integrity verification
-7. Release statement
+The previous repository content has been retained and reorganized where practical. The standardization release changes repository presentation and structure; it does not claim that previously pending technical work is complete.
 
-## Versioning
+## Security / Publication Boundary
 
-- `v1.0.x` — patch-level Core maintenance
-- `v1.1.x` — controlled Core maintenance line
-- `v1.2.x` — controlled Core maintenance line
-- `v2.x+` — higher-layer/workload development
+Never commit credentials, passwords, API tokens, private keys, recovery keys, activation keys, Wi-Fi PSKs, or other secret authentication material. Redact sensitive machine identifiers when publishing raw captures.
 
-See `docs/governance/versioning.md`.
+## Reference Template
+
+The common repository pattern is based on the owner's `github-repository-template`. This repository may contain additional project-specific structure where required.
